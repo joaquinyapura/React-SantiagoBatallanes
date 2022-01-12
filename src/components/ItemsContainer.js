@@ -10,7 +10,7 @@ function ItemsContainer() {
   return (
     <Container>
       <Card className="tarjeta">
-        <Card.Img variant="top" src="holder.js/100px180" />
+        <Card.Img variant="top" src="https://www.pinclipart.com/picdir/big/194-1948210_open-jpg-100x100-pixels-clipart.png" />
         <Card.Body>
           <Card.Title>Articulo</Card.Title>
           <Card.Text>
