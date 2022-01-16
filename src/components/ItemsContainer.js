@@ -5,20 +5,12 @@ import '../App.css';
 
 import { Card } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+import TARJETA from "./TARJETA";
 
 function ItemsContainer() {
   return (
     <Container>
-      <Card className="tarjeta">
-        <Card.Img variant="top" src="https://www.pinclipart.com/picdir/big/194-1948210_open-jpg-100x100-pixels-clipart.png" />
-        <Card.Body>
-          <Card.Title>Articulo</Card.Title>
-          <Card.Text>
-            descripción del articulo Lorem ipsum dolor sit amet, consectetur adipisicing eli caracteres
-          </Card.Text>
-          <Button variant="primary">Añadir al carrito</Button>
-        </Card.Body>
-      </Card>
+     <TARJETA></TARJETA>
     </Container>
   );
 }

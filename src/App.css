@@ -1,4 +1,23 @@
-.tarjeta {
+body{
+  font-size: 1.6rem;
+  border-style: none;
+}
+
+button{
+  border-style: none;
+}
+
+.card {
   width: 200px;
   margin-top: 6rem;
+ text-align: center;
+}
+.counterContainer{
+  display: flex;
+  justify-content: center;
+}
+.counter__input{
+  width: 5rem;
+  text-align: center;
+  border-style: none;
 }
