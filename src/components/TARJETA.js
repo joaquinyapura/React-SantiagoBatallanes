@@ -9,15 +9,19 @@ export default function Tarjeta({item}) {
   /* stados del contador */
 const [valor, setvalor] =useState(0);
   const sumar = () => {
-    setvalor(valor + 1);
+    if(valor < item.stock){
+      setvalor(valor + 1)
+  };
   };
   const restar = () => {
-    setvalor(valor - 1);
+    if(valor !== 0) {
+      setvalor(valor - 1)
+  };
   };
 
   /* alerta de agregar al carrito */
   const alertar = () => {
-    valor<=item.stock? alert(`estas cargando ${valor} ${item.nombre}`):alert(`sin stock`)
+    valor<=item.stock? alert(`estas cargando ${valor} ${item.nombre}`):null;
   };
 
   return (
