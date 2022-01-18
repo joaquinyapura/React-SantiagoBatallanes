@@ -8,17 +8,65 @@ import Tarjeta from "./Tarjeta";
 export default function ItemsContainer() {
 
   //const arrayDeProductos=[{nombre:'niki',stock:3},{nombre:'adidas',stock:5},{nombre:'puma',stock:1}];
+  const [promesaActiva,setPromesaActiva]=useState(false);
+  
+  const [arrayDeProductos,setArrayDeProductos]=useState([]);
 
-  const [arrayDeProductos,setArrayDeProductos]=useState([{nombre:'nike',stock:3},{nombre:'adidas',stock:5},{nombre:'puma',stock:1},{nombre:'sa',stock:1}])
+  //{nombre:'nike',stock:3},{nombre:'adidas',stock:5},{nombre:'puma',stock:1},{nombre:'sa',stock:1}
+
+  const productsPromisse = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+      resolve([{nombre:'nike',stock:3},{nombre:'adidas',stock:5},{nombre:'puma',stock:1},{nombre:'sa',stock:1}])
+    },3000)
+  });
+
+
+  productsPromisse
+  .then(res=>{
+    setPromesaActiva(true);
+    setArrayDeProductos(res);
+  })
+
+  .catch(err=>{
+    console.log(err);
+  });
+  
 
   return (
-    <Container fluid className="row contenedorTarjetas">
-     {
-     arrayDeProductos.map(item=>{
-      return <Tarjeta item={item} />
-     })
-     }
-    </Container>
-  );
+<>
+{(promesaActiva)?
+<>
+<Container fluid className="row contenedorTarjetas">
+{
+arrayDeProductos.map(item=>{
+ return <Tarjeta item={item} />
+})
+}
+</Container>
+</>
+:
+<h1>loading spinner</h1>
+
+
 }
 
+
+
+
+</>
+
+    
+    
+  );
+  
+}
+
+
+
+/* <Container fluid className="row contenedorTarjetas">
+{
+arrayDeProductos.map(item=>{
+ return <Tarjeta item={item} />
+})
+}
+</Container> */
