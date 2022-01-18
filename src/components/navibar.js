@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
-import CARRO from "./CARRO";
+import Carro from "./Carro";
 
 export default function Navibar({ jsonLinks }) {
   return (
@@ -27,7 +27,7 @@ export default function Navibar({ jsonLinks }) {
             </Nav>
 
             <Nav className="justify-content-end" activeKey="/home">
-              <CARRO />
+              <Carro />
             </Nav>
           </Navbar.Collapse>
         </Container>

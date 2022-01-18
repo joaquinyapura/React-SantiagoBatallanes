@@ -1,18 +1,24 @@
-import React from "react";
+import React,{useState} from "react";
 import { Container } from "react-bootstrap";
 import '../App.css';
 
 
-import { Card } from "react-bootstrap";
-import { Button } from "react-bootstrap";
-import TARJETA from "./TARJETA";
+import Tarjeta from "./Tarjeta";
 
-function ItemsContainer() {
+export default function ItemsContainer() {
+
+  //const arrayDeProductos=[{nombre:'niki',stock:3},{nombre:'adidas',stock:5},{nombre:'puma',stock:1}];
+
+  const [arrayDeProductos,setArrayDeProductos]=useState([{nombre:'nike',stock:3},{nombre:'adidas',stock:5},{nombre:'puma',stock:1}])
+
   return (
-    <Container>
-     <TARJETA></TARJETA>
+    <Container className="row">
+     {
+     arrayDeProductos.map(item=>{
+      return <Tarjeta item={item} />
+     })
+     }
     </Container>
   );
 }
 
-export default ItemsContainer;

@@ -3,7 +3,7 @@ import './App.css';
 
 
 /* COMPONENTES */
-import Navibar from './components/navibar';
+import Navibar from './components/Navibar';
 
 import ItemsContainer from './components/ItemsContainer';
 
