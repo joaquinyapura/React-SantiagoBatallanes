@@ -22,7 +22,7 @@ const [valor, setvalor] =useState(0);
 
   return (
     <>
-      <Card className="card col-lg-3">
+      <Card className="card col-lg-2 col-sm-12">
         <Card.Img variant="top" src="https://dummyimage.com/250/ffffff/000000" />
         <Card.Body>
           <Card.Title>{item.nombre}</Card.Title>
