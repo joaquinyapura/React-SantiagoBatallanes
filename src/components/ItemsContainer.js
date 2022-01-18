@@ -1,5 +1,7 @@
 import React,{useState} from "react";
-import { Container } from "react-bootstrap";
+import { Container,Spinner } from "react-bootstrap";
+
+
 import '../App.css';
 
 
@@ -45,7 +47,9 @@ arrayDeProductos.map(item=>{
 </Container>
 </>
 :
-<h1>loading spinner</h1>
+<Spinner animation="border" role="status">
+  <span className="visually-hidden">Loading...</span>
+</Spinner>
 
 
 }
@@ -62,11 +66,3 @@ arrayDeProductos.map(item=>{
 }
 
 
-
-/* <Container fluid className="row contenedorTarjetas">
-{
-arrayDeProductos.map(item=>{
- return <Tarjeta item={item} />
-})
-}
-</Container> */
