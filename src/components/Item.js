@@ -21,7 +21,7 @@ const [valor, setvalor] =useState(0);
 
   /* alerta de agregar al carrito */
   const alertar = () => {
-    valor<=item.stock? alert(`estas cargando ${valor} ${item.nombre}`):null;
+    alert(`estas cargando ${valor} ${item.nombre}`);
   };
 
   return (

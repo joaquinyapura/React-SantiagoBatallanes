@@ -5,7 +5,7 @@ import './App.css';
 /* COMPONENTES */
 import Navibar from './components/Navibar';
 
-import ItemsContainer from './components/ItemsContainer';
+import ItemListContainer from './components/ItemListContainer';
 
 
 
@@ -14,7 +14,7 @@ function App() {
   return (
     <>
     <Navibar jsonLinks={jsonLinks}  />
-    <ItemsContainer />
+    <ItemListContainer />
     </>
   );
 }
