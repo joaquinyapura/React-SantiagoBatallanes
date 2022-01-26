@@ -1,54 +1,65 @@
-import React, { useState } from "react";
-import { Container, Spinner } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
 
 import "../App.css";
 
-import Item from "./Item";
+import ItemList from "./ItemList";
+
 
 export default function ItemListContainer() {
-  //const arrayDeProductos=[{nombre:'niki',stock:3},{nombre:'adidas',stock:5},{nombre:'puma',stock:1}];
-  const [promesaActiva, setPromesaActiva] = useState(false);
+
+/* 
+  const [promesaActiva, setPromesaActiva] = useState(false); */
 
   const [arrayDeProductos, setArrayDeProductos] = useState([]);
+  
+  useEffect(()=>{
 
-  //{nombre:'nike',stock:3},{nombre:'adidas',stock:5},{nombre:'puma',stock:1},{nombre:'sa',stock:1}
-
-  const productsPromisse = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve([
-        { nombre: "nike", stock: 3 },
-        { nombre: "adidas", stock: 5 },
-        { nombre: "puma", stock: 1 },
-        { nombre: "sa", stock: 1 },
-      ]);
-    }, 3000);
-  });
-
-  productsPromisse
-    .then((res) => {
-      setPromesaActiva(true);
-      setArrayDeProductos(res);
-    })
-
-    .catch((err) => {
-      console.log(err);
+    const productsPromisse = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve([
+          { id:'0', nombre: "Nike", stock: 3 },
+          { id:'1',nombre: "Adidas", stock: 5 },
+          { id:'2',nombre: "Puma", stock: 1 },
+          { id:'3',nombre: "DC", stock: 1 },
+        ]);
+      }, 2000);
     });
+  
+    productsPromisse
+      .then((res) => {
+        /* setPromesaActiva(true); */
+        setArrayDeProductos(res);
+      })
+  
+      .catch((err) => {
+        console.log(err);
+      });
+
+  },[])
+
+
 
   return (
     <>
-      {promesaActiva ? (
-        <>
-          <Container fluid className="row contenedorTarjetas">
-            {arrayDeProductos.map((item) => {
-              return <Item item={item} />;
-            })}
-          </Container>
-        </>
-      ) : (
-        <Spinner animation="border" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </Spinner>
-      )}
+    <ItemList arrayDeProductos={arrayDeProductos} />
+
     </>
+      
   );
 }
+
+
+/* {promesaActiva ? (
+  <>
+    <Container fluid className="row contenedorTarjetas">
+      {arrayDeProductos.map((item) => {
+        return <Item item={item} />;
+      })}
+    </Container>
+  </>
+) : (
+  <Spinner animation="border" role="status">
+    <span className="visually-hidden">Loading...</span>
+  </Spinner>
+)}
+</> */
