@@ -17,6 +17,7 @@ time, mark, audio, video {
   font-size:100%;
   vertical-align:baseline;
   background:transparent;
+  text-decoration: none;
   
 }
 
@@ -49,6 +50,7 @@ a {
   font-size:100%;
   vertical-align:baseline;
   background:transparent;
+  text-decoration: none;
 }
 
 /* change colours to suit your needs */
@@ -127,3 +129,8 @@ button{
   border-style: none;
 }
 
+
+/* 
+.navBar_Link{
+
+} */

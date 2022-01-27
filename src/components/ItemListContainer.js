@@ -17,10 +17,10 @@ export default function ItemListContainer() {
     const productsPromisse = new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve([
-          { id:'0', nombre: "Nike", stock: 3 },
-          { id:'1',nombre: "Adidas", stock: 5 },
-          { id:'2',nombre: "Puma", stock: 1 },
-          { id:'3',nombre: "DC", stock: 1 },
+          { id:'0', nombre: "Remera oversize", categoria:"remera", marca:"Nike", stock: 3 },
+          { id:'1',nombre: "Adidas remera",categoria:"remera",marca:"Adidas", stock: 5 },
+          { id:'2',nombre: "Puma pantalon",categoria:"pantalon",marca:"Puma", stock: 1 },
+          { id:'3',nombre: "DC pantalon",categoria:"pantalon",marca:"Dc", stock: 1 },
         ]);
       }, 2000);
     });
