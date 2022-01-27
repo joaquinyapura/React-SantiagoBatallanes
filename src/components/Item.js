@@ -52,7 +52,8 @@ export default function Tarjeta({item}) {
                     <button onClick={sumar}>+1</button>
                   </div>
                 </InputGroup>
-                <Link to={`/item/${item.id}`}>ver detalles</Link>
+                <Link className="button__item"  to={`/item/${item.id}`}>ver detalles</Link>
+                <br></br>
           <Button variant="primary" onClick={alertar} >añadir al carrito</Button>
         </Card.Body>
       </Card>

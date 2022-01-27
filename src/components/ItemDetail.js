@@ -1,5 +1,5 @@
 import React , {useState} from "react";
-import { Card, Button, InputGroup,Alert} from "react-bootstrap";
+import { Card, Button, InputGroup,Alert,Spinner } from "react-bootstrap";
 
 export default function ItemDetail({ producto }) {
 
@@ -61,7 +61,8 @@ export default function ItemDetail({ producto }) {
             </Card>
           </>
         ) : (
-          <>cargando...</>
+          <><Spinner animation="border" role="status">
+        </Spinner></>
         )}
       </div>
     </>
