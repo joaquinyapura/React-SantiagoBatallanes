@@ -2,11 +2,12 @@ import React from 'react'
 
 import {BsCart} from 'react-icons/bs';
 import {Nav} from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 export default function Carro() {
     return (
         <>
-        <Nav.Link><BsCart/><p>1</p></Nav.Link>
+        <NavLink to="/carro"><BsCart/><p>1</p></NavLink>
         </>
     )
 }

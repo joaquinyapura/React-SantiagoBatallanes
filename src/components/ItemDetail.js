@@ -1,28 +1,19 @@
 import React , {useState} from "react";
 import { Card, Button, InputGroup,Alert,Spinner } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import ItemCounter from "./ItemCounter";
+import Carro from "./Carro";
 
 export default function ItemDetail({ producto }) {
 
+  const [mostrarItemCount,setMostrarItemCount]=useState(true);
+  
+    function onAdd (valor){
 
-
-    const [valor, setvalor] =useState(0);
-
-
-    const sumar = () => {
-      if(valor < producto.stock){
-        setvalor(valor + 1)
-    };
-    };
-    const restar = () => {
-      if(valor !== 0) {
-        setvalor(valor - 1)
-    };
-    };
-
-
-  const alertar = () => {
-    alert("Compra efectuada correctamente")
+    alert(`quiere agregar ${valor}`);
+    setMostrarItemCount(false);
   };
+
 
   return (
     <>
@@ -37,26 +28,12 @@ export default function ItemDetail({ producto }) {
               <Card.Body>
                 <Card.Title>{producto.nombre}</Card.Title>
                 <Card.Text>{`${producto.categoria} ${producto.id}`}</Card.Text>
-                <InputGroup className="counterContainer">
-                  <div>
-                    <button variant="primary" onClick={restar}>
-                      -1
-                    </button>
-                  </div>
-                  <input
-                    type="number"
-                    name=""
-                    id=""
-                    value={valor}
-                    className="counter__input"
-                  />
-                  <div>
-                    <button onClick={sumar}>+1</button>
-                  </div>
-                </InputGroup>
-                <Button variant="primary" onClick={alertar}>
-                  Añadir al carrito
-                </Button>
+                {
+                  (mostrarItemCount)?<ItemCounter producto={producto} onAdd={onAdd} />
+                  :
+                  <Link to={`/carro`}>Ir al carrito</Link>
+                }
+                
               </Card.Body>
             </Card>
           </>

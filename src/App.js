@@ -33,13 +33,6 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-      let arrayNuevo=[];
-      for (let i = 0; i < arrayDeProductos.length; i++) {
-        if (arrayDeProductos.categoria.includes(arrayDeProductos.categoria)) {
-          arrayNuevo.push(arrayDeProductos.categoria)
-        }
-        
-      }
 
   },[])
   return (
@@ -50,6 +43,10 @@ function App() {
            
            <Route exact path="/">
             <ItemListContainer />
+          </Route>
+          
+           <Route exact path="/carro">
+            <>ESTAS EN EL CARRO</>
           </Route>
 
 
