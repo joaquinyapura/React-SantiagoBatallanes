@@ -1,11 +1,12 @@
-import React, {useState} from "react";
-import { Card, Button,InputGroup, Alert} from "react-bootstrap";
+import React, { useState} from "react";
+import { Card, Button,InputGroup} from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default function Tarjeta({item}) {
 
 
   const [valor, setvalor] =useState(0);
+  
 
 
     const sumar = () => {

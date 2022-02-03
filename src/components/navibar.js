@@ -7,6 +7,7 @@ import { Navbar } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
 import Carro from "./Carro";
+import Cart from "./Cart";
 
 export default function Navibar({ arrayDeProductos }) {
   return (

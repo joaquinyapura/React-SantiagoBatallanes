@@ -1,17 +1,19 @@
-import React , {useState} from "react";
-import { Card, Button, InputGroup,Alert,Spinner } from "react-bootstrap";
+import React , {useState, useContext} from "react";
+import { Card, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ItemCounter from "./ItemCounter";
-import Carro from "./Carro";
+import { cartContext } from "./context/CartProvider";
 
 export default function ItemDetail({ producto }) {
+
+  const {addToCart}=useContext(cartContext);
 
   const [mostrarItemCount,setMostrarItemCount]=useState(true);
   
     function onAdd (valor){
 
-    alert(`quiere agregar ${valor}`);
-    setMostrarItemCount(false);
+      setMostrarItemCount(false);
+      addToCart(producto,valor)
   };
 
 
@@ -31,7 +33,7 @@ export default function ItemDetail({ producto }) {
                 {
                   (mostrarItemCount)?<ItemCounter producto={producto} onAdd={onAdd} />
                   :
-                  <Link to={`/carro`}>Ir al carrito</Link>
+                  <Link to={"/carro"}>Ir al carrito</Link>
                 }
                 
               </Card.Body>

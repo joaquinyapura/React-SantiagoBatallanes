@@ -8,6 +8,8 @@ import Navibar from "./components/Navibar";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Category from "./components/Category";
+import Cart from "./components/Cart";
+import CartProvider from "./components/context/CartProvider.js";
 
 
 function App() {
@@ -37,6 +39,8 @@ function App() {
   },[])
   return (
     <>
+
+    <CartProvider>
       <BrowserRouter>
         <Navibar arrayDeProductos={arrayDeProductos} />
         <Switch>
@@ -46,7 +50,7 @@ function App() {
           </Route>
           
            <Route exact path="/carro">
-            <>ESTAS EN EL CARRO</>
+            <Cart />
           </Route>
 
 
@@ -59,6 +63,7 @@ function App() {
           </Route>
         </Switch>
       </BrowserRouter>
+      </CartProvider>
     </>
   );
 }
