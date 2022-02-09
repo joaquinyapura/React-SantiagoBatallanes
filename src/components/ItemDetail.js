@@ -13,7 +13,7 @@ export default function ItemDetail({ producto }) {
     function onAdd (valor){
 
       setMostrarItemCount(false);
-      addToCart(producto,valor)
+      addToCart(producto,valor,producto.precio)
   };
 
 

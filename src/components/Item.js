@@ -36,26 +36,8 @@ export default function Tarjeta({item}) {
           <Card.Text>
             breve descripcion del producto lorem ipsum dolor 
           </Card.Text>
-          <InputGroup className="counterContainer">
-                  <div>
-                    <button variant="primary" onClick={restar}>
-                      -1
-                    </button>
-                  </div>
-                  <input
-                    type="number"
-                    name=""
-                    id=""
-                    value={valor}
-                    className="counter__input"
-                  />
-                  <div>
-                    <button onClick={sumar}>+1</button>
-                  </div>
-                </InputGroup>
+          
                 <Link className="button__item"  to={`/item/${item.id}`}>ver detalles</Link>
-                <br></br>
-          <Button variant="primary" onClick={alertar} >añadir al carrito</Button>
         </Card.Body>
       </Card>
 

@@ -5,11 +5,14 @@ import { Table } from 'react-bootstrap';
 export const Cart = () => {
 
     const {cart} = useContext(cartContext);
+    const {cartCount} = useContext(cartContext);
+    const {cartPrice} = useContext(cartContext);
     const {removeItem}=useContext(cartContext);
     const {vaciarCarrito}=useContext(cartContext);
     
   return (
   <>
+  
  <Table striped bordered hover variant="primary">
   <tbody>
     {cart.map(element=>{
@@ -26,6 +29,8 @@ export const Cart = () => {
 
   </tbody>
 </Table>
+<div> cantidad de productos {cartCount} </div>
+<div> precio total $ {cartPrice} </div>
 <button onClick={()=> vaciarCarrito()}>Vaciar Carrito de compras</button>
   </>
 
