@@ -7,7 +7,6 @@ import { Navbar } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
 import Carro from "./Carro";
-import Cart from "./Cart";
 
 export default function Navibar({ arrayDeProductos }) {
   return (
@@ -24,7 +23,7 @@ export default function Navibar({ arrayDeProductos }) {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               {arrayDeProductos.map((item) => (
-                <Link className="nav" to={`/category/${item.categoria}`}>{item.categoria}</Link>
+                <Link className="nav" to={`/category/${item}`}>{item}</Link>
               ))}
             </Nav>
 

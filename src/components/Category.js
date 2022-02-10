@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Button,Card, } from 'react-bootstrap';
+import { getFirestore } from '../firebase/firebase'
 
 
 
@@ -20,23 +21,31 @@ export default function Category() {
     
     
     useEffect(()=>{
-        const productsPromisse = new Promise((resolve, reject) => {
-            resolve([
-              { id:'0', nombre: "Remera oversize", categoria:"remera", marca:"Nike", stock: 3 },
-              { id:'1',nombre: "Adidas remera",categoria:"remera",marca:"Adidas", stock: 5 },
-              { id:'2',nombre: "Puma pantalon",categoria:"pantalon",marca:"Puma", stock: 1 },
-              { id:'3',nombre: "DC pantalon",categoria:"pantalon",marca:"Dc", stock: 1 },
-            ]);
-        });
-      
-        productsPromisse
-          .then((res) => {
-            setArrayDeProductos(res.filter(item=>item.categoria===categoryId));
+      const db = getFirestore();
+
+      const itemCollection = db.collection("Items").where('category', '==', parseInt(categoryId));
+  
+      itemCollection.get()
+        .then((querySnapShot) => {
+  
+          if (querySnapShot.size == 0) {
+            console.log('no hay documentos con en ese query');
+            return
+          }
+  
+          console.log('hay documentos');
+  
+          //console.log(querySnapShot.docs);
+  
+          setArrayDeProductos(querySnapShot.docs.map((doc)=> {
+              return { id: doc.id, ...doc.data() }
+          }
+          ));
+          
         })
-        
-        .catch((err) => {
-            console.log(err);
-        });
+        .catch((err)=>{
+          console.log(err);
+        })
 
     },[categoryId])
     

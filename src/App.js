@@ -13,30 +13,10 @@ import CartProvider from "./components/context/CartProvider.js";
 
 
 function App() {
-  const [arrayDeProductos, setArrayDeProductos] = useState([]);
+  const arrayDeProductos=["remeras","pantalones"]
+          
   
-  useEffect(()=>{
-
-    const productsPromisse = new Promise((resolve, reject) => {
-        resolve([
-          { id:'0', nombre: "Remera oversize", categoria:"remera", marca:"Nike", stock: 3 },
-          { id:'1',nombre: "Adidas remera",categoria:"remera",marca:"Adidas", stock: 5 },
-          { id:'2',nombre: "Puma pantalon",categoria:"pantalon",marca:"Puma", stock: 1 },
-          { id:'3',nombre: "DC pantalon",categoria:"pantalon",marca:"Dc", stock: 1 },
-        ]);
-    });
-  
-    productsPromisse
-      .then((res) => {
-        /* setPromesaActiva(true); */
-        setArrayDeProductos(res);
-      })
-  
-      .catch((err) => {
-        console.log(err);
-      });
-
-  },[])
+   
   return (
     <>
 
