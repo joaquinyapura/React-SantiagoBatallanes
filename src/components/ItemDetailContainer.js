@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {useParams, Link } from 'react-router-dom';
 import ItemDetail from "./ItemDetail";
+import { getFirestore } from "../firebase/firebase";
 
 
 export default function ItemDetailContainer() {
@@ -10,23 +11,30 @@ export default function ItemDetailContainer() {
   const [producto, setProducto] = useState({});
 
   useEffect(()=>{
-      setTimeout(()=>{
+    const db = getFirestore();
+    const itemCollection = db.collection("Items");
+    //PONER ACA EL ID DE SU DOCUMENTO
+    const miItem = itemCollection.doc("FKs9itC6KLXqADWx1yIt");
+    
+    miItem.get()    
+    .then((doc) => {
+      
+      setProducto({id:doc.id, ...doc.data()});
+      console.log(producto);
+        /* console.log(doc.data());
+        console.log(doc.id);
+        console.log({ id: doc.id, ...doc.data() }); */
 
-          let listadoDeProductos = [
-            { id:'0', nombre: "Remera oversize", categoria:"remera", marca:"Nike", stock: 3,precio:221 },
-            { id:'1',nombre: "Adidas remera",categoria:"remera",marca:"Adidas", stock: 5 ,precio:220 },
-            { id:'2',nombre: "Puma pantalon",categoria:"pantalon",marca:"Puma", stock: 1,precio:100 },
-            { id:'3',nombre: "DC pantalon",categoria:"pantalon",marca:"Dc", stock: 1,precio:202 },
-          ];
+        if (!doc.exists) {
+          console.log('no existe ese documento');
+          return
+        }
 
-          listadoDeProductos = listadoDeProductos.filter(item => item.id === itemId);
-
-          let myProducto = listadoDeProductos[0];
-
-          setProducto(myProducto);
-
-      }, 2000)
-  }, [itemId])
+      })
+      .catch((err)=>{
+        console.log(err);
+      })
+  }, [])
 
   return (
     <>

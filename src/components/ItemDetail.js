@@ -13,7 +13,7 @@ export default function ItemDetail({ producto }) {
     function onAdd (valor){
 
       setMostrarItemCount(false);
-      addToCart(producto,valor,producto.precio)
+      addToCart(producto,valor,)
   };
 
 
@@ -28,8 +28,8 @@ export default function ItemDetail({ producto }) {
                 src="https://dummyimage.com/250/ffffff/000000"
               />
               <Card.Body>
-                <Card.Title>{producto.nombre}</Card.Title>
-                <Card.Text>{`${producto.categoria} ${producto.id}`}</Card.Text>
+                <Card.Title>{producto.title}</Card.Title>
+                <Card.Text>{`${producto.category} ${producto.id}`}</Card.Text>
                 {
                   (mostrarItemCount)?<ItemCounter producto={producto} onAdd={onAdd} />
                   :
