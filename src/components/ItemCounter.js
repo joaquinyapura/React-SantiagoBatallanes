@@ -23,7 +23,7 @@ export default function ItemCounter({ producto,onAdd }) {
     <>
       <InputGroup className="counterContainer">
         <div>
-          <button variant="primary" onClick={restar}>
+          <button className="bottone5" variant="primary" onClick={restar}>
             -1
           </button>
         </div>
@@ -35,7 +35,7 @@ export default function ItemCounter({ producto,onAdd }) {
           className="counter__input"
         />
         <div>
-          <button onClick={sumar}>+1</button>
+          <button className="bottone5" onClick={sumar}>+1</button>
         </div>
       </InputGroup>
       <Button variant="primary" onClick={()=>onAdd(valor)}>

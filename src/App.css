@@ -23,6 +23,7 @@ time, mark, audio, video {
 
 body {
   line-height:1;
+  background-color:#212121 !important;
 }
 
 article,aside,details,figcaption,figure,
@@ -105,14 +106,32 @@ button{
   border-style: none;
 }
 
-
-
+/* 
+TARJETAS */
 .card {
-  width: 300px;
-  margin-top: 6rem;
- text-align: center;
- margin: 10px 20px;
+  margin: 1rem;
+  width: 190px;
+  height: 400px;
+  border-radius: 20px;
+  text-align: center;
+  padding: 5px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
 }
+
+.card__content {
+  background: rgb(5, 6, 45);
+  border-radius: 17px;
+  width: 100%;
+  height: 100%;
+  color: #cccccc;
+}
+
+.card__img{
+   overflow: hidden;
+  width: 200px;
+  height: 220px;
+ }
 
 
 .button__item{
@@ -144,6 +163,56 @@ button{
   justify-content: center;
   margin-top: 20px !important;
 }
+
+/* COUNTER */
+
+
+.bottone5 {
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+ }
+ 
+ .bottone5:hover,
+ .bottone5:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+ }
+ 
+ .bottone5:hover {
+  transform: translateY(-1px);
+ }
+ 
+ .bottone5:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+ }
+
+
 .counterContainer{
   display: flex;
   justify-content: center;
@@ -154,6 +223,7 @@ button{
   width: 5rem;
   text-align: center;
   border-style: none;
+  margin: 0px 5px;
 }
 
 .nav{

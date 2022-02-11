@@ -25,13 +25,13 @@ export default function Tarjeta({item}) {
     alert ("añadido al carrito")
   };
 
-  
-
+/*   src="https://ferreira.vteximg.com.br/arquivos/ids/370716-540-540/ad_gd5785.jpg?v=637465352727530000"
+ */
   return (
     <>
       <Card className="card col-lg-2 col-sm-12">
-        <Card.Img variant="top" src="https://dummyimage.com/250/ffffff/000000" />
-        <Card.Body>
+        <Card.Body className="card__content">
+        <Card.Img className="card__img" src="https://ferreira.vteximg.com.br/arquivos/ids/370716-540-540/ad_gd5785.jpg?v=637465352727530000"  />
           <Card.Title>{item.nombre}</Card.Title>
           <Card.Text>
             breve descripcion del producto lorem ipsum dolor 

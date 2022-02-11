@@ -23,11 +23,11 @@ export default function ItemDetail({ producto }) {
         {producto.id ? (
           <>
             <Card className="card col-lg-2 col-sm-12">
+              <Card.Body className="card__content">
               <Card.Img
                 variant="top"
-                src="https://dummyimage.com/250/ffffff/000000"
+                src=""
               />
-              <Card.Body>
                 <Card.Title>{producto.title}</Card.Title>
                 <Card.Text>{`${producto.category} ${producto.id}`}</Card.Text>
                 {

@@ -23,7 +23,7 @@ export default function Category() {
     useEffect(()=>{
       const db = getFirestore();
 
-      const itemCollection = db.collection("Items").where('category', '==', parseInt(categoryId));
+      const itemCollection = db.collection("Items").where('category', '===', categoryId);
   
       itemCollection.get()
         .then((querySnapShot) => {
@@ -61,8 +61,8 @@ export default function Category() {
                 src="https://dummyimage.com/250/ffffff/000000"
               />
               <Card.Body>
-                <Card.Title>{item.nombre}</Card.Title>
-                <Card.Text>{`${item.categoria} ${item.id}`}</Card.Text>
+                <Card.Title>{item.title}</Card.Title>
+                <Card.Text>{`${item.category} ${item.id}`}</Card.Text>
                 <Button variant="primary" onClick={alertar}>
                   Añadir al carrito
                 </Button>
