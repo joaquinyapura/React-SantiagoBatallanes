@@ -4,15 +4,11 @@ import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export const Cart = () => {
-  const { cart } = useContext(cartContext);
-  const { cartCount } = useContext(cartContext);
-  const { cartPrice } = useContext(cartContext);
-  const { removeItem } = useContext(cartContext);
-  const { vaciarCarrito } = useContext(cartContext);
+  const { cart,cartCount,cartPrice,removeItem,vaciarCarrito } = useContext(cartContext);
 
   return (
     <>
-    {cart.length>1?
+    {cart.length>0?
     <div>
       <Table striped bordered hover variant="primary">
         <tbody>
@@ -39,6 +35,7 @@ export const Cart = () => {
       <div> cantidad de productos {cartCount} </div>
       <div> precio total {cartPrice} </div>
       <button onClick={() => vaciarCarrito()}>Vaciar Carrito de compras</button>
+      <Link to={"/formulario"}> al formuuu </Link>
       </div>
     :
     <Link to={"/"}>Back to shop</Link>

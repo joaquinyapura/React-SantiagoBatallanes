@@ -4,7 +4,7 @@ import { InputGroup, Button } from "react-bootstrap";
 export default function ItemCounter({ producto,onAdd }) {
 
     
-  const [valor, setvalor] = useState(0);
+  const [valor, setvalor] = useState(1);
 
   const sumar = () => {
     if (valor < producto.stock) {
@@ -23,7 +23,7 @@ export default function ItemCounter({ producto,onAdd }) {
     <>
       <InputGroup className="counterContainer">
         <div>
-          <button className="bottone5" variant="primary" onClick={restar}>
+          <button className="bottone5 " variant="primary" onClick={restar}>
             -1
           </button>
         </div>

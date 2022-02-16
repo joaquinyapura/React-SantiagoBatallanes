@@ -1,9 +1,7 @@
 import React, {useContext} from 'react'
 
 import {BsCart} from 'react-icons/bs';
-import {Nav} from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import Cart from './Cart';
 
 import { cartContext } from './context/CartProvider';
 

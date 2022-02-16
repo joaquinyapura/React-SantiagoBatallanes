@@ -10,6 +10,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import Category from "./components/Category";
 import Cart from "./components/Cart";
 import CartProvider from "./components/context/CartProvider.js";
+import TestForm from "./components/TestForm";
 
 
 function App() {
@@ -31,6 +32,10 @@ function App() {
           
            <Route exact path="/carro">
             <Cart />
+          </Route>
+
+           <Route exact path="/formulario">
+            <TestForm />
           </Route>
 
 

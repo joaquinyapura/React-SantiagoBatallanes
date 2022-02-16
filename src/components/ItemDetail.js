@@ -19,14 +19,15 @@ export default function ItemDetail({ producto }) {
 
   return (
     <>
-      <div className="contenedorTarjetas">
+      <div className="contenedorTarjetas container">
         {producto.id ? (
           <>
-            <Card className="card col-lg-2 col-sm-12">
+            <div className="row">
+            <Card className="card col-lg-5 col-sm-12">
               <Card.Body className="card__content">
               <Card.Img
                 variant="top"
-                src=""
+                src={producto.img}
               />
                 <Card.Title>{producto.title}</Card.Title>
                 <Card.Text>{`${producto.category} ${producto.id}`}</Card.Text>
@@ -38,6 +39,7 @@ export default function ItemDetail({ producto }) {
                 
               </Card.Body>
             </Card>
+            </div>
           </>
         ) : (
           <><Spinner animation="border" role="status">

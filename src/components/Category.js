@@ -23,12 +23,12 @@ export default function Category() {
     useEffect(()=>{
       const db = getFirestore();
 
-      const itemCollection = db.collection("Items").where('category', '===', categoryId);
+      const itemCollection = db.collection("Items").where('category', '==', categoryId);
   
       itemCollection.get()
         .then((querySnapShot) => {
   
-          if (querySnapShot.size == 0) {
+          if (querySnapShot.size === 0) {
             console.log('no hay documentos con en ese query');
             return
           }
