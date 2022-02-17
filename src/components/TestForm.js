@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useRef } from "react";
+import React, { useState, useContext, useRef } from "react";
 import firebase from "firebase";
 import { getFirestore } from '../firebase/firebase'
 import { cartContext } from "./context/CartProvider";
@@ -6,8 +6,9 @@ import { cartContext } from "./context/CartProvider";
 
 export default function TestForm() {
     
-    const { cart,cartCount,cartPrice,removeItem,vaciarCarrito } = useContext(cartContext);
     const [orderId, setOrderId] = useState('');
+
+    const { cart,cartPrice,} = useContext(cartContext);
 
     const nameRef = useRef();
     const addressRef = useRef();
@@ -31,7 +32,7 @@ export default function TestForm() {
                 mobile: mobileRef.current.value,
             },
             items: {cart},
-            total: 1500,
+            total: {cartPrice},
             date: firebase.firestore.Timestamp.fromDate(new Date())
         }
 

@@ -15,7 +15,6 @@ export default function ItemListContainer() {
     const db = getFirestore();
 
     const itemCollection = db.collection("Items")
-    //.where('category', '==', 'adidas');
 
     itemCollection.get()
       .then((querySnapShot) => {
@@ -26,8 +25,6 @@ export default function ItemListContainer() {
         }
 
         console.log('hay documentos');
-
-        //console.log(querySnapShot.docs);
 
         setArrayDeProductos(querySnapShot.docs.map((doc)=> {
             return { id: doc.id, ...doc.data() }

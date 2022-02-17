@@ -10,7 +10,7 @@ export default function Category() {
 
     const [arrayDeProductos, setArrayDeProductos] = useState([]);
     const {categoryId}=useParams();
-
+    
 
 
 

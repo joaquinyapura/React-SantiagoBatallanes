@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {useParams, Link } from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import ItemDetail from "./ItemDetail";
 import { getFirestore } from "../firebase/firebase";
 
@@ -20,9 +20,6 @@ export default function ItemDetailContainer() {
     .then((doc) => {
       
       setProducto({id:doc.id, ...doc.data()});
-      /* console.log(doc.data());
-      console.log(doc.id);
-      console.log({ id: doc.id, ...doc.data() }); */
       
       if (!doc.exists) {
         console.log('no existe ese documento');

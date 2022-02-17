@@ -13,10 +13,12 @@ const CartProvider = ({ children }) => {
   const [cartPrice,setCartPrice]=useState(0)
 
 
-
-  useEffect(()=>{
-    
-  },[cartCount])
+useEffect(()=>{
+  const totalPriceCart = ()=> cart.reduce((acum, val) => acum + val.item.price, 0);
+  const totalItemsCart = ()=>cart.reduce((acum, val) => acum + val.count, 0);
+  setCartCount(totalItemsCart());
+  setCartPrice(totalPriceCart());
+},[cart])
   
   
   
@@ -24,14 +26,13 @@ const CartProvider = ({ children }) => {
   
   
   const addToCart = (producto, count) => {
+    
     if (isInCart(producto.id)) {
       const indexItem = cart.findIndex(e => e.item.id === producto.id);
       cart[indexItem].count = cart[indexItem].count+count;
       setCart([...cart])      
     } else {
       setCart([...cart, { item: producto, count }]);
-      setCartCount(totalItemsCart());
-      setCartPrice(totalPriceCart());
     }
   };
   
@@ -46,8 +47,6 @@ const CartProvider = ({ children }) => {
   const vaciarCarrito =() => {
     setCart([]);
   }
-  const totalPriceCart = ()=> cart.reduce((acum, val) => acum + val.item.precio, 0);
-  const totalItemsCart = ()=>cart.reduce((acum, val) => acum + val.count, 0);
   
   
   return (

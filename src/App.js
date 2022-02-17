@@ -11,6 +11,7 @@ import Category from "./components/Category";
 import Cart from "./components/Cart";
 import CartProvider from "./components/context/CartProvider.js";
 import TestForm from "./components/TestForm";
+import UpdateDoc from "./components/UpdateDoc"
 
 
 function App() {
@@ -41,6 +42,10 @@ function App() {
 
           <Route path="/item/:itemId">
             <ItemDetailContainer /> 
+          </Route>
+
+          <Route path="/update/:itemId">
+            <UpdateDoc />
           </Route>
 
           <Route path="/category/:categoryId">
