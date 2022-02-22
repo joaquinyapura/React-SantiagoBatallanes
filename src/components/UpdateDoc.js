@@ -10,12 +10,12 @@ export default function TestForm() {
     const priceRef = useRef();
     const stockRef = useRef();
 
-    console.log(docId)
+    
+    const db = getFirestore();
+    const docRef = db.collection("Items").doc(docId);
+
     
     function handleClick() {
-        
-        const db = getFirestore();
-        const docRef = db.collection("Items").doc(docId);
 
 
         docRef.update({stock:stockRef.current.value,price:priceRef.current.value})

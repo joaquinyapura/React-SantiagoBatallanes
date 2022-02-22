@@ -58,11 +58,11 @@ export default function Category() {
       {arrayDeProductos.map(item=><Card className="card col-lg-2 col-sm-12">
               <Card.Img
                 variant="top"
-                src="https://dummyimage.com/250/ffffff/000000"
+                src={item.img}
               />
               <Card.Body>
                 <Card.Title>{item.title}</Card.Title>
-                <Card.Text>{`${item.category} ${item.id}`}</Card.Text>
+                <Card.Text>$ {item.price}</Card.Text>
                 <Button variant="primary" onClick={alertar}>
                   Añadir al carrito
                 </Button>

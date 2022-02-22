@@ -44,7 +44,7 @@ function App() {
             <ItemDetailContainer /> 
           </Route>
 
-          <Route path="/update/:itemId">
+          <Route path="/update/:docId">
             <UpdateDoc />
           </Route>
 

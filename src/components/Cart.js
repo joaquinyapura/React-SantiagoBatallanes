@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { cartContext } from "./context/CartProvider";
 import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 export const Cart = () => {
   const { cart,cartCount,cartPrice,removeItem,vaciarCarrito } = useContext(cartContext);
@@ -14,10 +15,11 @@ export const Cart = () => {
         <tbody>
           {cart.map((element) => {
             return (
+              
               <tr>
-                <td>#Id{element.item.id}</td>
-                <td>{element.item.nombre}</td>
+                <td>{element.item.title}</td>
                 <td>{element.count}</td>
+                <td>{element.item.price * element.count}</td>
                 <td>
                   <button
                     onClick={() => removeItem(element.item.id)}
@@ -34,8 +36,8 @@ export const Cart = () => {
       </Table>
       <div> cantidad de productos {cartCount} </div>
       <div> precio total {cartPrice} </div>
-      <button onClick={() => vaciarCarrito()}>Vaciar Carrito de compras</button>
-      <Link to={"/formulario"}> al formuuu </Link>
+      <Button variant="danger" onClick={() => vaciarCarrito()}>Vaciar Carrito de compras</Button>
+      <Link className="" to={"/formulario"}> al formuuu </Link>
 
       </div>
     :

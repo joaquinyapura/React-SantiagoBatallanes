@@ -32,9 +32,9 @@ export default function Tarjeta({item}) {
       <Card className="card col-lg-2 col-sm-12">
         <Card.Body className="card__content">
         <Card.Img className="card__img" src="https://ferreira.vteximg.com.br/arquivos/ids/370716-540-540/ad_gd5785.jpg?v=637465352727530000"  />
-          <Card.Title>{item.nombre}</Card.Title>
+          <Card.Title>{item.title}</Card.Title>
           <Card.Text>
-            breve descripcion del producto lorem ipsum dolor 
+           $ {item.price}
           </Card.Text>
           
                 <Link className="button__item"  to={`/item/${item.id}`}>ver detalles</Link>
