@@ -232,3 +232,32 @@ TARJETAS */
   color: white!important;
   margin: 0 20px;
 }
+
+
+/* form */
+.form__container{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center ;
+  width: 40%;
+  text-align: center;
+  margin: auto;
+  margin-top: 1rem;
+  padding: 2rem;
+  box-shadow: 5px 10px 7px rgb(114, 189, 250);
+}
+
+.form__input{
+  width: 50%;
+}
+
+
+.invalid {
+  border:1px solid red !important;
+ }
+ input, textarea {
+  outline: none !important;
+  box-shadow: none !important; 
+}

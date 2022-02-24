@@ -52,28 +52,28 @@ export default function TestForm() {
         <>
             {orderId && (<h1>Felicitaciones tu order es {orderId}</h1>)}
 
-            <div>
-                <h3>Ingresa tus datos:</h3>
+            <div className="form__container">
+                <h3>Finaliza tu compra</h3>
 
-                <input type="text" name="name" ref={nameRef} placeholder="Nombre y Apelllido" />
+                <input type="text" className="form__input" name="name" ref={nameRef} placeholder="Nombre y Apelllido" />
                 <br />
 
-                <input type="text" name="mobile" ref={mobileRef} placeholder="Nro de Celular" />
+                <input type="text" className="form__input" name="mobile" ref={mobileRef} placeholder="Nro de Celular" />
                 <br />
 
-                <input type="text" name="email" ref={emailRef} placeholder="Email" />
+                <input type="text" className="form__input" name="email" ref={emailRef} placeholder="Email" />
                 <br />
 
-                <input type="text" name="state" ref={stateRef} placeholder="Provincia" />
+                <input type="text" className="form__input" name="state" ref={stateRef} placeholder="Provincia" />
                 <br />
 
-                <input type="text" name="city" ref={cityRef} placeholder="Ciudad" />
+                <input type="text" className="form__input" name="city" ref={cityRef} placeholder="Ciudad" />
                 <br />
 
-                <input type="text" name="address" ref={addressRef} placeholder="Direccion" />
+                <input type="text" className="form__input" name="address" ref={addressRef} placeholder="Direccion" />
                 <br />
 
-                <button onClick={() => handleClick()} >Vamos!</button>
+                <button onClick={() => handleClick()} >Listo!</button>
             </div>
         </>
     );

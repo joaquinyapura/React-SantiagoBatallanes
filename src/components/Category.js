@@ -1,5 +1,5 @@
 import React, { useEffect,useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams,Link } from 'react-router-dom';
 import { Button,Card, } from 'react-bootstrap';
 import { getFirestore } from '../firebase/firebase'
 
@@ -35,8 +35,6 @@ export default function Category() {
   
           console.log('hay documentos');
   
-          //console.log(querySnapShot.docs);
-  
           setArrayDeProductos(querySnapShot.docs.map((doc)=> {
               return { id: doc.id, ...doc.data() }
           }
@@ -63,9 +61,7 @@ export default function Category() {
               <Card.Body>
                 <Card.Title>{item.title}</Card.Title>
                 <Card.Text>$ {item.price}</Card.Text>
-                <Button variant="primary" onClick={alertar}>
-                  Añadir al carrito
-                </Button>
+                <Link className="button__item"  to={`/item/${item.id}`}>ver detalles</Link>
               </Card.Body>
             </Card>)}
       </div>
