@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Navbar } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
-import Carro from "./Carro";
+import Carro from "./asdasd";
 
 export default function Navibar({ arrayDeProductos }) {
   return (
