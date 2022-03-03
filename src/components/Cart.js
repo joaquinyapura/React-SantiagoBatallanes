@@ -19,7 +19,7 @@ export const Cart = () => {
               <tr>
                 <td>{element.item.title}</td>
                 <td>{element.count}</td>
-                <td>{element.item.price * element.count}</td>
+                <td>$ {element.item.price * element.count}</td>
                 <td>
                   <button
                     onClick={() => removeItem(element.item.id)}
@@ -37,11 +37,11 @@ export const Cart = () => {
       <div> cantidad de productos {cartCount} </div>
       <div> precio total {cartPrice} </div>
       <Button variant="danger" onClick={() => vaciarCarrito()}>Vaciar Carrito de compras</Button>
-      <Link className="" to={"/formulario"}> al formuuu </Link>
+      <Link className="button__item" to={"/formulario"}> Finalizar Compra </Link>
 
       </div>
     :
-    <Link to={"/"}>Back to shop</Link>
+    <Link className="button__item" to={"/"}>Back to shop</Link>
     }
     </>
   );

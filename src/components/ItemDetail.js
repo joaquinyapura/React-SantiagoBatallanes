@@ -34,7 +34,7 @@ export default function ItemDetail({ producto }) {
                 {
                   (mostrarItemCount)?<ItemCounter producto={producto} onAdd={onAdd} />
                   :
-                  <Link to={"/carro"}>Ir al carrito</Link>
+                  <Link className="button__item" to={"/carro"}>Ir al carrito</Link>
                 }
                 
               </Card.Body>

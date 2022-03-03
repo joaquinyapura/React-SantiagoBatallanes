@@ -24,7 +24,8 @@ export default function Navibar({ arrayDeProductos }) {
             <Nav className="me-auto">
               {arrayDeProductos.map((item) => (
                 <Link className="nav" to={`/category/${item}`}>{item}</Link>
-              ))}
+                ))}
+                <Link className="nav" to={`/ItemListContainerAdmin`}>Admin</Link>
             </Nav>
 
             <Nav className="justify-content-end" activeKey="/home">

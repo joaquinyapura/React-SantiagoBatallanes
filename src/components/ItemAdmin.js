@@ -2,7 +2,7 @@ import React, { useState} from "react";
 import { Card, Button,InputGroup} from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export default function Tarjeta({item}) {
+export default function ItemAdmin({item}) {
 
 
   return (
@@ -16,7 +16,7 @@ export default function Tarjeta({item}) {
           </Card.Text>
           
                 <Link className="button__item"  to={`/item/${item.id}`}>ver detalles</Link>
-    
+                <Link className="button__item"  to={`/update/${item.id}`}>modificar</Link>
         </Card.Body>
       </Card>
 

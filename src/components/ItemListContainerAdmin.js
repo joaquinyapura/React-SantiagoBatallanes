@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { getFirestore } from '../firebase/firebase'
 import "../App.css";
-import ItemList from "./ItemList";
+import ItemListAdmin from "./ItemListAdmin";
 
 
-export default function ItemListContainer() {
+export default function ItemListContainerAdmin() {
 
-/* 
-  const [promesaActiva, setPromesaActiva] = useState(false); */
+
 
   const [arrayDeProductos, setArrayDeProductos] = useState([]);
   
@@ -36,11 +35,10 @@ export default function ItemListContainer() {
 
   },[])
 
-
-
+  
   return (
     <>
-    <ItemList arrayDeProductos={arrayDeProductos} />
+    <ItemListAdmin arrayDeProductos={arrayDeProductos} />
 
     </>
       

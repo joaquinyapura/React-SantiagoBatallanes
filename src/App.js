@@ -12,6 +12,7 @@ import Cart from "./components/Cart";
 import CartProvider from "./components/context/CartProvider.js";
 import TestForm from "./components/TestForm";
 import UpdateDoc from "./components/UpdateDoc"
+import ItemListContainerAdmin from "./components/ItemListContainerAdmin";
 
 
 function App() {
@@ -37,6 +38,10 @@ function App() {
 
            <Route exact path="/formulario">
             <TestForm />
+          </Route>
+
+           <Route exact path="/ItemListContainerAdmin">
+            <ItemListContainerAdmin />
           </Route>
 
 
