@@ -32,13 +32,13 @@ export default function TestForm() {
 
         <>
 
-            <div>
-                <h3>Ingresa tus datos:</h3>
+            <div className="form__container">
+                <h3>Modifica el producto</h3>
 
-                <input type="number" name="price" ref={priceRef} placeholder="price" />
+                <input type="number" className="form__input" name="price" ref={priceRef} placeholder="price" />
                 <br />
 
-                <input type="number" name="stock" ref={stockRef} placeholder="stock" />
+                <input type="number"  className="form__input" name="stock" ref={stockRef} placeholder="stock" />
                 <br />
 
                 

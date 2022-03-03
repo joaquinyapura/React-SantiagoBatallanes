@@ -30,7 +30,7 @@ export default function ItemDetail({ producto }) {
                 src={producto.img}
               />
                 <Card.Title>{producto.title}</Card.Title>
-                <Card.Text>{`${producto.category} ${producto.id}`}</Card.Text>
+                <Card.Text>{`${producto.category}`}</Card.Text>
                 {
                   (mostrarItemCount)?<ItemCounter producto={producto} onAdd={onAdd} />
                   :

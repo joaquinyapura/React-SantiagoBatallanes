@@ -50,7 +50,7 @@ export default function TestForm() {
     return (
 
         <>
-            {orderId && (<h1>Felicitaciones tu order es {orderId}</h1>)}
+            {orderId && (<h1 className="Alerta">Felicitaciones tu order es {orderId}</h1>)}
 
             <div className="form__container">
                 <h3>Finaliza tu compra</h3>

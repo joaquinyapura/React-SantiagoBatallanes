@@ -14,8 +14,6 @@ export default function ItemAdmin({item}) {
           <Card.Text>
            $ {item.price}
           </Card.Text>
-          
-                <Link className="button__item"  to={`/item/${item.id}`}>ver detalles</Link>
                 <Link className="button__item"  to={`/update/${item.id}`}>modificar</Link>
         </Card.Body>
       </Card>
