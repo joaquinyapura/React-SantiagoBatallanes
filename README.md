@@ -1,3 +1,5 @@
+Proyecto Final Reactjs creado en clases de Coderhouse. 
+
 
 En la carpeta del directorio podes correr:
 
@@ -13,4 +15,9 @@ Si necesitas más información acerca de este proyecto  [Escribime aqui ](mailto
 
 ## Video demostración
 
-para ver un video demostrativo de la app  [Click aquí ](https://www.loom.com/share/4027ca74b244450f85a69a257d4fb767).
+para ver un video demostrativo de la app  [Click aquí ](https://www.loom.com/share/8870356a9d554e298d22dbc629ff6555).
+
+
+## Deploy https://reactsantiagobatallanes.vercel.app/
+
+
